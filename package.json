@@ -63,7 +63,9 @@
   "scripts": {
     "check:licenses": "npx license-report",
     "check:licenses:dev:write": "npx license-report  --config .license-report.json > tmp/license-report-dev.md",
-    "check:licenses:prod:write": "npx license-report --only=prod --config .license-report.json > tmp/license-report-prod.md"
+    "check:licenses:prod:write": "npx license-report --only=prod --config .license-report.json > tmp/license-report-prod.md",
+    "start": "nx run ng-three:serve:development",
+    "start:ng-three": "nx run ng-three:serve:development"
   },
   "version": "0.0.0"
 }

@@ -1,11 +1,10 @@
-import { NgtCanvas } from 'angular-three';
-import { Experience } from './experience/experience.component';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { NgtCanvas } from 'angular-three';
+import { Experience } from './experience/experience.component';
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule, NgtCanvas],
+  imports: [RouterModule, NgtCanvas],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
