@@ -1,13 +1,60 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "generators": {
+    "@nx/angular:application": {
+      "e2eTestRunner": "playwright",
+      "linter": "eslint",
+      "style": "scss",
+      "unitTestRunner": "jest"
+    }
+  },
   "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
-      "default"
+      "default",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/jest.config.[jt]s",
+      "!{projectRoot}/src/test-setup.[jt]s",
+      "!{projectRoot}/test-setup.[jt]s"
     ],
     "sharedGlobals": []
+  },
+  "plugins": [
+    {
+      "options": {
+        "targetName": "e2e"
+      },
+      "plugin": "@nx/playwright/plugin"
+    },
+    {
+      "options": {
+        "targetName": "lint"
+      },
+      "plugin": "@nx/eslint/plugin"
+    }
+  ],
+  "targetDefaults": {
+    "@angular-devkit/build-angular:application": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    },
+    "@nx/jest:jest": {
+      "cache": true,
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      },
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
+      "options": {
+        "passWithNoTests": true
+      }
+    },
+    "e2e-ci--**/*": {
+      "dependsOn": ["^build"]
+    }
   }
 }
