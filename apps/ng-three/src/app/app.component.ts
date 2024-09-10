@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NgtCanvas } from 'angular-three';
-import { Experience } from './experience/experience.component';
+import { Experience } from './shared/components/experience/experience.component';
 @Component({
   standalone: true,
   imports: [RouterModule, NgtCanvas],

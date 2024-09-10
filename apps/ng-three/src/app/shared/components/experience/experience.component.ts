@@ -1,23 +1,24 @@
 import {
   CUSTOM_ELEMENTS_SCHEMA,
-  Component,
-  viewChild,
-  ElementRef,
   ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  viewChild,
 } from '@angular/core';
 import { extend, injectBeforeRender } from 'angular-three';
-import { Mesh, BoxGeometry, MeshBasicMaterial } from 'three';
+import {
+  BoxGeometry,
+  Mesh,
+  MeshBasicMaterial,
+  MeshMatcapMaterial,
+} from 'three';
 
-extend({ Mesh, BoxGeometry, MeshBasicMaterial });
+extend({ Mesh, BoxGeometry, MeshBasicMaterial, MeshMatcapMaterial });
 
 @Component({
   standalone: true,
-  template: `
-    <ngt-mesh #mesh>
-      <ngt-box-geometry />
-      <ngt-mesh-basic-material color="hotpink" />
-    </ngt-mesh>
-  `,
+  selector: 'app-experience',
+  templateUrl: './experience.component.html',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
