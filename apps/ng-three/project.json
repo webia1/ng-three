@@ -44,6 +44,12 @@
         "outputPath": "dist/apps/ng-three",
         "polyfills": ["zone.js"],
         "scripts": [],
+        "stylePreprocessorOptions": {
+          "includePaths": [
+            "apps-globals/shared-styles",
+            "apps/ng-three/public/assets/styles/"
+          ]
+        },
         "styles": [
           "apps/ng-three/public/assets/styles/app-styles.scss",
           "apps/ng-three/src/styles.scss"

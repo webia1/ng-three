@@ -1,9 +1,17 @@
+@import '__base';
+
+/**
+ * DO NOT CHANGE THIS FILE!
+ * Make your customizations here:
+ * apps/ng-three/public/assets/styles/app-styles.scss
+ */
+
 html,
 body {
   /**
   * Only place where we use !important
   */
-
+  font-size: $baseUnit !important;
   height: 100vh !important;
   width: 100vw !important;
   margin: 0 !important;
