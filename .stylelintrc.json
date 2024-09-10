@@ -1,0 +1,146 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "plugins": ["stylelint-scss"],
+  "rules": {
+    "alpha-value-notation": [
+      "number",
+      {
+        "severity": "warning"
+      }
+    ],
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "except": ["blockless-after-same-name-blockless", "first-nested"],
+        "ignore": ["after-comment"],
+        "ignoreAtRules": ["import", "else"],
+        "severity": "warning"
+      }
+    ],
+    "color-function-notation": [
+      "modern",
+      {
+        "severity": "warning"
+      }
+    ],
+    "color-hex-length": "long",
+    "comment-empty-line-before": [
+      "always",
+      {
+        "except": ["first-nested"],
+        "severity": "warning"
+      }
+    ],
+    "custom-property-empty-line-before": [
+      "always",
+      {
+        "except": ["after-custom-property", "first-nested"],
+        "ignore": ["after-comment", "inside-single-line-block"],
+        "severity": "warning"
+      }
+    ],
+    "declaration-block-no-redundant-longhand-properties": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
+    "declaration-empty-line-before": null,
+    "font-family-no-missing-generic-family-keyword": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
+    "function-name-case": [
+      "lower",
+      {
+        "severity": "warning"
+      }
+    ],
+    "media-feature-range-notation": [
+      "prefix",
+      {
+        "severity": "warning"
+      }
+    ],
+    "no-descending-specificity": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
+    "no-empty-source": null,
+    "number-max-precision": [
+      5,
+      {
+        "severity": "warning"
+      }
+    ],
+    "rule-empty-line-before": null,
+    "scss/at-extend-no-missing-placeholder": null,
+    "scss/at-function-pattern": [
+      "^[a-z]+(?:-[a-z]+)*$",
+      {
+        "severity": "warning"
+      }
+    ],
+    "scss/at-import-partial-extension": null,
+    "scss/at-mixin-argumentless-call-parentheses": [
+      "always",
+      {
+        "severity": "warning"
+      }
+    ],
+    "scss/at-mixin-pattern": [
+      "^[a-z]+(?:-[a-z]+)*$",
+      {
+        "severity": "warning"
+      }
+    ],
+    "scss/comment-no-empty": [
+      true,
+      {
+        "ignore": ["stylelint-commands"],
+        "severity": "warning"
+      }
+    ],
+    "scss/dollar-variable-colon-space-after": [
+      "always-single-line",
+      {
+        "severity": "warning"
+      }
+    ],
+    "scss/dollar-variable-empty-line-before": [
+      "always",
+      {
+        "except": ["first-nested", "after-dollar-variable"],
+        "ignore": ["after-comment"],
+        "severity": "warning"
+      }
+    ],
+    "scss/dollar-variable-pattern": null,
+    "scss/double-slash-comment-empty-line-before": null,
+    "scss/double-slash-comment-whitespace-inside": null,
+    "scss/load-no-partial-leading-underscore": null,
+    "scss/no-global-function-names": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
+    "scss/operator-no-newline-after": null,
+    "selector-class-pattern": [
+      "^[a-z\\d]+(?:-[a-z\\d]+)*(?:--[a-z\\d]+)*(?:__[a-z\\d]+)*(?:-[a-z\\d]+)*$",
+      {
+        "severity": "warning"
+      }
+    ],
+    "shorthand-property-no-redundant-values": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ]
+  }
+}

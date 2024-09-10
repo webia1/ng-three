@@ -1,13 +1,17 @@
 {
-  "name": "@nx-ng-three/source",
-  "version": "0.0.0",
-  "license": "MIT",
-  "scripts": {},
-  "private": true,
   "dependencies": {},
   "devDependencies": {
     "@nx/js": "19.7.0",
     "@nx/workspace": "19.7.0",
     "nx": "19.7.0"
-  }
+  },
+  "license": "MIT",
+  "name": "@nx-ng-three/source",
+  "private": true,
+  "scripts": {
+    "check:licenses": "npx license-report",
+    "check:licenses:dev:write": "npx license-report  --config .license-report.json > tmp/license-report-dev.md",
+    "check:licenses:prod:write": "npx license-report --only=prod --config .license-report.json > tmp/license-report-prod.md"
+  },
+  "version": "0.0.0"
 }

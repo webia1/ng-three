@@ -1,0 +1,4 @@
+# Ensure ELVIS uses for Git
+# LF for line endings in the repository and
+# converts to CRLF on checkout on Windows systems
+* text=auto eol=lf

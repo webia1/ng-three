@@ -1,0 +1,5 @@
+{
+  "fields": ["name", "licenseType", "installedVersion", "link"],
+  "output": "markdown",
+  "package": "./package.json"
+}
