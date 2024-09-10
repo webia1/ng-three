@@ -1,6 +1,9 @@
 {
-  "dependencies": {},
+  "dependencies": {
+    "angular-three": "^2.1.0"
+  },
   "devDependencies": {
+    "@nx/angular": "^19.7.0",
     "@nx/js": "19.7.0",
     "@nx/workspace": "19.7.0",
     "nx": "19.7.0"
