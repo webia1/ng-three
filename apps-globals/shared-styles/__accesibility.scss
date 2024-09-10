@@ -1,0 +1,28 @@
+@use 'sass:list';
+@import '__base';
+
+/**
+  * Improving Accessibility, Contrast
+  * Text gets a decent border to improve readability.
+  */
+
+@function text-border($stroke, $color) {
+  $shadow: ();
+  $from: $stroke * -1;
+
+  @for $i from $from through $stroke {
+    @for $j from $from through $stroke {
+      $shadow: list.append(
+        $shadow,
+        $i * $space-min $j * $space-min 0 $color,
+        comma
+      );
+    }
+  }
+
+  @return $shadow;
+}
+
+@mixin text-border($stroke, $color) {
+  text-shadow: text-border($stroke, $color);
+}

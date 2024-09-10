@@ -1,68 +1,56 @@
 {
-  "name": "ng-three",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "projectType": "application",
+  "name": "ng-three",
   "prefix": "app",
+  "projectType": "application",
   "sourceRoot": "apps/ng-three/src",
   "tags": [],
   "targets": {
     "build": {
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true
+        },
+        "production": {
+          "budgets": [
+            {
+              "maximumError": "1mb",
+              "maximumWarning": "500kb",
+              "type": "initial"
+            },
+            {
+              "maximumError": "4kb",
+              "maximumWarning": "2kb",
+              "type": "anyComponentStyle"
+            }
+          ],
+          "outputHashing": "all"
+        }
+      },
+      "defaultConfiguration": "production",
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/ng-three",
-        "index": "apps/ng-three/src/index.html",
-        "browser": "apps/ng-three/src/main.ts",
-        "polyfills": ["zone.js"],
-        "tsConfig": "apps/ng-three/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
         "assets": [
           {
             "glob": "**/*",
             "input": "apps/ng-three/public"
           }
         ],
-        "styles": ["apps/ng-three/src/styles.scss"],
-        "scripts": []
+        "browser": "apps/ng-three/src/main.ts",
+        "index": "apps/ng-three/src/index.html",
+        "inlineStyleLanguage": "scss",
+        "outputPath": "dist/apps/ng-three",
+        "polyfills": ["zone.js"],
+        "scripts": [],
+        "styles": [
+          "apps/ng-three/public/assets/styles/app-styles.scss",
+          "apps/ng-three/src/styles.scss"
+        ],
+        "tsConfig": "apps/ng-three/tsconfig.app.json"
       },
-      "configurations": {
-        "production": {
-          "budgets": [
-            {
-              "type": "initial",
-              "maximumWarning": "500kb",
-              "maximumError": "1mb"
-            },
-            {
-              "type": "anyComponentStyle",
-              "maximumWarning": "2kb",
-              "maximumError": "4kb"
-            }
-          ],
-          "outputHashing": "all"
-        },
-        "development": {
-          "optimization": false,
-          "extractLicenses": false,
-          "sourceMap": true
-        }
-      },
-      "defaultConfiguration": "production"
-    },
-    "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
-      "options": {
-        "port": 8888
-      },
-      "configurations": {
-        "production": {
-          "buildTarget": "ng-three:build:production"
-        },
-        "development": {
-          "buildTarget": "ng-three:build:development"
-        }
-      },
-      "defaultConfiguration": "development"
+      "outputs": ["{options.outputPath}"]
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -73,11 +61,19 @@
     "lint": {
       "executor": "@nx/eslint:lint"
     },
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+    "serve": {
+      "configurations": {
+        "development": {
+          "buildTarget": "ng-three:build:development"
+        },
+        "production": {
+          "buildTarget": "ng-three:build:production"
+        }
+      },
+      "defaultConfiguration": "development",
+      "executor": "@angular-devkit/build-angular:dev-server",
       "options": {
-        "jestConfig": "apps/ng-three/jest.config.ts"
+        "port": 8888
       }
     },
     "serve-static": {
@@ -85,9 +81,16 @@
       "options": {
         "buildTarget": "ng-three:build",
         "port": 8888,
-        "staticFilePath": "dist/apps/ng-three/browser",
-        "spa": true
+        "spa": true,
+        "staticFilePath": "dist/apps/ng-three/browser"
       }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "apps/ng-three/jest.config.ts"
+      },
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"]
     }
   }
 }

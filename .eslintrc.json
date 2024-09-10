@@ -7,7 +7,7 @@
         "@nx/enforce-module-boundaries": [
           "error",
           {
-            "allow": [],
+            "allow": ["@apps-globals/shared-global-styles"],
             "depConstraints": [
               {
                 "onlyDependOnLibsWithTags": ["*"],
