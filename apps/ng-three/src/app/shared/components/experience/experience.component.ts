@@ -1,3 +1,4 @@
+import { NgtsOrbitControls } from 'angular-three-soba/controls';
 import {
   CUSTOM_ELEMENTS_SCHEMA,
   ChangeDetectionStrategy,
@@ -6,6 +7,8 @@ import {
   viewChild,
 } from '@angular/core';
 import { extend, injectBeforeRender } from 'angular-three';
+
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 import {
   AmbientLight,
@@ -23,6 +26,7 @@ extend({
   MeshMatcapMaterial,
   AmbientLight,
   PointLight,
+  OrbitControls,
 });
 
 @Component({
@@ -30,8 +34,10 @@ extend({
   templateUrl: './experience.component.html',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [NgtsOrbitControls],
 })
 export class ExperienceComponent {
+  protected readonly Math = Math;
   cubeRef = viewChild.required<ElementRef<Mesh>>('cube');
 
   constructor() {

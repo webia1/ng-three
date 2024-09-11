@@ -1,4 +1,3 @@
-import { NgtsOrbitControls } from 'angular-three-soba/controls';
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NgtCanvas } from 'angular-three';
@@ -6,7 +5,7 @@ import { ExperienceComponent } from './shared/components/experience/experience.c
 
 @Component({
   standalone: true,
-  imports: [RouterModule, NgtCanvas, NgtsOrbitControls, ExperienceComponent],
+  imports: [RouterModule, NgtCanvas, ExperienceComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
