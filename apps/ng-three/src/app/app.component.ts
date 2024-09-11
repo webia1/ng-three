@@ -6,7 +6,7 @@ import { ExperienceComponent } from './shared/components/experience/experience.c
 
 @Component({
   standalone: true,
-  imports: [RouterModule, NgtCanvas, NgtsOrbitControls],
+  imports: [RouterModule, NgtCanvas, NgtsOrbitControls, ExperienceComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
