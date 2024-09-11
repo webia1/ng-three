@@ -8,8 +8,6 @@ import {
 } from '@angular/core';
 import { extend, injectBeforeRender } from 'angular-three';
 
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-
 import {
   AmbientLight,
   BoxGeometry,
@@ -26,7 +24,6 @@ extend({
   MeshMatcapMaterial,
   AmbientLight,
   PointLight,
-  OrbitControls,
 });
 
 @Component({
