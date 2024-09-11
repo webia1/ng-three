@@ -6,6 +6,7 @@ import {
   viewChild,
 } from '@angular/core';
 import { extend, injectBeforeRender } from 'angular-three';
+
 import {
   AmbientLight,
   BoxGeometry,

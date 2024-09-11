@@ -1,3 +1,6 @@
 {
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "never"
+  },
   "html.customData": ["./node_modules/angular-three/metadata.json"]
 }
