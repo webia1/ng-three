@@ -1,4 +1,22 @@
-<ngts-orbit-controls />
+<ngts-orbit-controls
+  [options]="{
+    enableDamping: true,
+    dampingFactor: 0.25,
+    rotateSpeed: 0.25,
+    zoomSpeed: 0.25,
+    panSpeed: 0.25,
+    autoRotate: true,
+    autoRotateSpeed: 0.5,
+    minPolarAngle: Math.PI / 4,
+    maxPolarAngle: Math.PI / 2,
+    minDistance: 1,
+    maxDistance: 10,
+    enableZoom: true,
+    enablePan: true,
+    enableRotate: true
+  }"
+/>
+
 <ngt-mesh #cube>
   <ngt-box-geometry />
   <ngt-mesh-matcap-material color="red" />
