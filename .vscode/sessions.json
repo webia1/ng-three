@@ -1,0 +1,48 @@
+{
+  "activateOnStartup": false,
+  "active": "default",
+  "keepExistingTerminals": false,
+  "sessions": {
+    "NG THREE": [
+      {
+        "autoExecuteCommands": true,
+        "color": "terminal.ansiBrightGreen",
+        "commands": [
+          "npm run start:ng-three"
+        ],
+        "icon": "run-status-running",
+        "name": "ng-three"
+      },
+      {
+        "autoExecuteCommands": true,
+        "color": "terminal.ansiYellow",
+        "commands": [
+          "clear"
+        ],
+        "icon": "surround-with",
+        "name": "webia-ai"
+      },
+      {
+        "autoExecuteCommands": false,
+        "color": "terminal.ansiBrightMagenta",
+        "commands": [
+          "clear"
+        ],
+        "icon": "terminal",
+        "name": "shell"
+      }
+    ],
+    "default": [
+      {
+        "autoExecuteCommands": true,
+        "color": "terminal.ansiBrightMagenta",
+        "commands": [
+          "clear"
+        ],
+        "icon": "git-branch",
+        "name": "git"
+      }
+    ]
+  },
+  "theme": "tribe"
+}
