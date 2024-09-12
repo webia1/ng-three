@@ -25,9 +25,7 @@
       {
         "autoExecuteCommands": false,
         "color": "terminal.ansiBrightMagenta",
-        "commands": [
-          "clear"
-        ],
+        "commands": [],
         "icon": "terminal",
         "name": "shell"
       }
@@ -36,9 +34,7 @@
       {
         "autoExecuteCommands": true,
         "color": "terminal.ansiBrightMagenta",
-        "commands": [
-          "clear"
-        ],
+        "commands": [],
         "icon": "git-branch",
         "name": "git"
       }
